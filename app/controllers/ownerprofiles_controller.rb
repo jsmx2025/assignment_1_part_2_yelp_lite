@@ -1,6 +1,6 @@
 class OwnerprofilesController < ApplicationController
   def index
-    @ownerprofiles = Ownerprofile.all
+    @ownerprofiles = Ownerprofile.page(params[:page]).per(10)
 
     render("ownerprofiles/index.html.erb")
   end
