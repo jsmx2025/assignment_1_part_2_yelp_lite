@@ -1,6 +1,9 @@
 class Owner < ApplicationRecord
   # Direct associations
 
+  has_one    :ownerprofile,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
