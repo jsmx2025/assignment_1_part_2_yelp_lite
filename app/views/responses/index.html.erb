@@ -20,7 +20,7 @@
       <tr>
         <td><%= response.content %></td>
         <td><%= response.owner.owner_id %></td>
-        <td><%= response.review_id %></td>
+        <td><%= response.review.created_at %></td>
         <td><%= response.restaurant_id %></td>
         <td>
           <a href="/responses/<%= response.id %>" class="btn btn-primary">Show</a>
