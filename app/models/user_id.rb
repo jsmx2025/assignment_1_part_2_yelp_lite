@@ -1,6 +1,10 @@
 class UserId < ApplicationRecord
   # Direct associations
 
+  has_one    :userprofile,
+             :foreign_key => "user_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
