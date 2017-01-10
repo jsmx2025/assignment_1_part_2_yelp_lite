@@ -18,8 +18,11 @@
         <td><%= userprofile.user.created_at %></td>
         <td>
           <a href="/userprofiles/<%= userprofile.id %>" class="btn btn-primary">Show</a>
-          <a href="/userprofiles/<%= userprofile.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_userprofile/<%= userprofile.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == userprofile.user %>
+            <a href="/userprofiles/<%= userprofile.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_userprofile/<%= userprofile.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

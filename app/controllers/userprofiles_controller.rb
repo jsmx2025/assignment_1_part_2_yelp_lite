@@ -1,4 +1,14 @@
 class UserprofilesController < ApplicationController
+  before_action :current_user_must_be_userprofile_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_userprofile_user_id
+    userprofile = Userprofile.find(params[:id])
+
+    unless current_user == userprofile.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @userprofiles = Userprofile.all
 
