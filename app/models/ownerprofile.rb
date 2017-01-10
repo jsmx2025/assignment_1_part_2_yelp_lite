@@ -9,6 +9,10 @@ class Ownerprofile < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :restaurants,
+             :through => :responses,
+             :source => :restaurant
+
   # Validations
 
 end
