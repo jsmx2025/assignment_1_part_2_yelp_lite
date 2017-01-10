@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :owners
+  # Routes for the Owner resource:
+  # READ
+  get "/owners", :controller => "owners", :action => "index"
+  get "/owners/:id", :controller => "owners", :action => "show"
+
+
   # Routes for the Response resource:
   # CREATE
   get "/responses/new", :controller => "responses", :action => "new"
