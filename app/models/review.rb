@@ -1,6 +1,9 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  has_many   :responses,
+             :dependent => :destroy
+
   has_one    :rating,
              :dependent => :nullify
 
