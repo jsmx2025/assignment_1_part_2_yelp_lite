@@ -47,8 +47,6 @@ class UserprofilesController < ApplicationController
   def update
     @userprofile = Userprofile.find(params[:id])
 
-    @userprofile.user_id = params[:user_id]
-
     save_status = @userprofile.save
 
     if save_status == true
