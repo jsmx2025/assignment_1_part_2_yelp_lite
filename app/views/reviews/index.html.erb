@@ -25,7 +25,7 @@
         <td><%= review.first_name %></td>
         <td><%= review.last_initial %></td>
         <td><%= review.restaurant.name %></td>
-        <td><%= review.userprofile_id %></td>
+        <td><%= review.userprofile.user_id %></td>
         <td>
           <a href="/reviews/<%= review.id %>" class="btn btn-primary">Show</a>
           <a href="/reviews/<%= review.id %>/edit" class="btn btn-warning">Edit</a>
