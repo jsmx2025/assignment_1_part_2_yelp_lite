@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Owner</dt>
-      <dd><%= @ownerprofile.owner_id %></dd>
+      <dd>
+        <% if @ownerprofile.owner.present? %>
+          <a href="/owners/<%= @ownerprofile.owner_id %>">
+            <%= @ownerprofile.owner.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

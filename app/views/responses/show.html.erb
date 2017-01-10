@@ -9,13 +9,31 @@
       <dd><%= @response.content %></dd>
 
       <dt>Owner</dt>
-      <dd><%= @response.owner_id %></dd>
+      <dd>
+        <% if @response.owner.present? %>
+          <a href="/ownerprofiles/<%= @response.owner_id %>">
+            <%= @response.owner.owner_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Review</dt>
-      <dd><%= @response.review_id %></dd>
+      <dd>
+        <% if @response.review.present? %>
+          <a href="/reviews/<%= @response.review_id %>">
+            <%= @response.review.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Restaurant</dt>
-      <dd><%= @response.restaurant_id %></dd>
+      <dd>
+        <% if @response.restaurant.present? %>
+          <a href="/restaurants/<%= @response.restaurant_id %>">
+            <%= @response.restaurant.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

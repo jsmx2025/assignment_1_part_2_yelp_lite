@@ -31,7 +31,13 @@
       <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= restaurant.name %></td>
-        <td><%= restaurant.tag.description__name %></td>
+        <td>
+          <% if restaurant.tag.present? %>
+            <a href="/tags/<%= restaurant.tag.id %>">
+              <%= restaurant.tag.description__name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= restaurant.description %></td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.website %></td>

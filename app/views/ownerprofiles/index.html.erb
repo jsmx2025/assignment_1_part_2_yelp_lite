@@ -15,7 +15,13 @@
 
       <% @ownerprofiles.each do |ownerprofile| %>
       <tr>
-        <td><%= ownerprofile.owner.email %></td>
+        <td>
+          <% if ownerprofile.owner.present? %>
+            <a href="/owners/<%= ownerprofile.owner.id %>">
+              <%= ownerprofile.owner.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/ownerprofiles/<%= ownerprofile.id %>" class="btn btn-primary">Show</a>
           <a href="/ownerprofiles/<%= ownerprofile.id %>/edit" class="btn btn-warning">Edit</a>

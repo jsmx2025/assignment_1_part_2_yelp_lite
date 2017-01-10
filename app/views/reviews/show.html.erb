@@ -18,10 +18,22 @@
       <dd><%= @review.last_initial %></dd>
 
       <dt>Restaurant</dt>
-      <dd><%= @review.restaurant_id %></dd>
+      <dd>
+        <% if @review.restaurant.present? %>
+          <a href="/restaurants/<%= @review.restaurant_id %>">
+            <%= @review.restaurant.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Userprofile</dt>
-      <dd><%= @review.userprofile_id %></dd>
+      <dd>
+        <% if @review.userprofile.present? %>
+          <a href="/userprofiles/<%= @review.userprofile_id %>">
+            <%= @review.userprofile.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

@@ -24,8 +24,20 @@
         <td><img src='<%= review.photos %>' class='img-responsive'></td>
         <td><%= review.first_name %></td>
         <td><%= review.last_initial %></td>
-        <td><%= review.restaurant.name %></td>
-        <td><%= review.userprofile.user_id %></td>
+        <td>
+          <% if review.restaurant.present? %>
+            <a href="/restaurants/<%= review.restaurant.id %>">
+              <%= review.restaurant.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if review.userprofile.present? %>
+            <a href="/userprofiles/<%= review.userprofile.id %>">
+              <%= review.userprofile.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/reviews/<%= review.id %>" class="btn btn-primary">Show</a>
           <a href="/reviews/<%= review.id %>/edit" class="btn btn-warning">Edit</a>

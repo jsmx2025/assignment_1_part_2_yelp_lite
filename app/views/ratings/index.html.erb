@@ -17,7 +17,13 @@
       <% @ratings.each do |rating| %>
       <tr>
         <td><%= rating.stars %></td>
-        <td><%= rating.review.created_at %></td>
+        <td>
+          <% if rating.review.present? %>
+            <a href="/reviews/<%= rating.review.id %>">
+              <%= rating.review.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/ratings/<%= rating.id %>" class="btn btn-primary">Show</a>
           <a href="/ratings/<%= rating.id %>/edit" class="btn btn-warning">Edit</a>

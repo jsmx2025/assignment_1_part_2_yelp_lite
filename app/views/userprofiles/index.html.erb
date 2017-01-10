@@ -15,7 +15,13 @@
 
       <% @userprofiles.each do |userprofile| %>
       <tr>
-        <td><%= userprofile.user.created_at %></td>
+        <td>
+          <% if userprofile.user.present? %>
+            <a href="/user_ids/<%= userprofile.user.id %>">
+              <%= userprofile.user.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/userprofiles/<%= userprofile.id %>" class="btn btn-primary">Show</a>
           

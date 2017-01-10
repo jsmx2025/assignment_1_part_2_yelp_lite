@@ -19,9 +19,27 @@
       <% @responses.each do |response| %>
       <tr>
         <td><%= response.content %></td>
-        <td><%= response.owner.owner_id %></td>
-        <td><%= response.review.created_at %></td>
-        <td><%= response.restaurant.name %></td>
+        <td>
+          <% if response.owner.present? %>
+            <a href="/ownerprofiles/<%= response.owner.id %>">
+              <%= response.owner.owner_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if response.review.present? %>
+            <a href="/reviews/<%= response.review.id %>">
+              <%= response.review.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if response.restaurant.present? %>
+            <a href="/restaurants/<%= response.restaurant.id %>">
+              <%= response.restaurant.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/responses/<%= response.id %>" class="btn btn-primary">Show</a>
           <a href="/responses/<%= response.id %>/edit" class="btn btn-warning">Edit</a>
