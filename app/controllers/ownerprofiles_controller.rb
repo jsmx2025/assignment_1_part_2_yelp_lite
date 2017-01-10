@@ -1,6 +1,7 @@
 class OwnerprofilesController < ApplicationController
   def index
-    @ownerprofiles = Ownerprofile.page(params[:page]).per(10)
+    @q = Ownerprofile.ransack(params[:q])
+    @ownerprofiles = @q.result(:distinct => true).includes(:owner, :responses, :restaurants).page(params[:page]).per(10)
 
     render("ownerprofiles/index.html.erb")
   end

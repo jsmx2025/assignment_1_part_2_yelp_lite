@@ -1,6 +1,7 @@
 class ResponsesController < ApplicationController
   def index
-    @responses = Response.page(params[:page]).per(10)
+    @q = Response.ransack(params[:q])
+    @responses = @q.result(:distinct => true).includes(:restaurant, :review, :owner).page(params[:page]).per(10)
 
     render("responses/index.html.erb")
   end
