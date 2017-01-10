@@ -69,7 +69,7 @@
           Userprofile
         </label>
 
-        <input type="text" id="userprofile_id" name="userprofile_id" placeholder="Userprofile" class="form-control" value="<%= @review.userprofile_id %>">
+        <%= select_tag(:userprofile_id, options_from_collection_for_select(Userprofile.all, :id, :user_id, @review.userprofile_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
