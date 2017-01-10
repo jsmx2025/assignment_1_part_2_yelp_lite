@@ -21,7 +21,7 @@
       <% @reviews.each do |review| %>
       <tr>
         <td><%= review.content %></td>
-        <td><%= review.photos %></td>
+        <td><img src='<%= review.photos %>' class='img-responsive'></td>
         <td><%= review.first_name %></td>
         <td><%= review.last_initial %></td>
         <td><%= review.restaurant.name %></td>
