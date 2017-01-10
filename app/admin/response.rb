@@ -1,5 +1,7 @@
 ActiveAdmin.register Response do
 
+ permit_params :content, :owner_id, :review_id, :restaurant_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
