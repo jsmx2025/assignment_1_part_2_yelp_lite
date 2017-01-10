@@ -9,6 +9,10 @@ class Userprofile < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :restaurants,
+             :through => :reviews,
+             :source => :restaurant
+
   has_many   :ratings,
              :through => :reviews,
              :source => :rating
