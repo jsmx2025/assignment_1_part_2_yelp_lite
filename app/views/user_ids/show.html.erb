@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h3>User #<%= @user_id.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Reviews</dt>
+      <dd><%= @user_id.reviews_id %></dd>
+
+      <dt>Email</dt>
+      <dd><%= @user_id.email %></dd>
+
+      <dt>Password</dt>
+      <dd><%= @user_id.password %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/user_ids" class="btn btn-primary">
+        Back
+      </a>
+    </div>
+  </div>
+</div>
