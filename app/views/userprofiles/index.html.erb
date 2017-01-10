@@ -15,7 +15,7 @@
 
       <% @userprofiles.each do |userprofile| %>
       <tr>
-        <td><%= userprofile.user_id %></td>
+        <td><%= userprofile.user.created_at %></td>
         <td>
           <a href="/userprofiles/<%= userprofile.id %>" class="btn btn-primary">Show</a>
           <a href="/userprofiles/<%= userprofile.id %>/edit" class="btn btn-warning">Edit</a>
