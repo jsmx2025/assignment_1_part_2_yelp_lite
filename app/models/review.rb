@@ -1,6 +1,9 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  belongs_to :userprofile,
+             :counter_cache => true
+
   has_many   :responses,
              :dependent => :destroy
 
