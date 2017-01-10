@@ -5,6 +5,10 @@ class Rating < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :userprofile,
+             :through => :review,
+             :source => :userprofile
+
   has_one    :restaurant,
              :through => :review,
              :source => :restaurant
