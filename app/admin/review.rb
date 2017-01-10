@@ -1,5 +1,7 @@
 ActiveAdmin.register Review do
 
+ permit_params :content, :photos, :first_name, :last_initial, :restaurant_id, :userprofile_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
