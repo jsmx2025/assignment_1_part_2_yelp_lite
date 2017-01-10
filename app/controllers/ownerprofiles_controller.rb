@@ -6,6 +6,7 @@ class OwnerprofilesController < ApplicationController
   end
 
   def show
+    @response = Response.new
     @ownerprofile = Ownerprofile.find(params[:id])
 
     render("ownerprofiles/show.html.erb")

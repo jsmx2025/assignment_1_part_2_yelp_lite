@@ -16,6 +16,7 @@ class UserprofilesController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @userprofile = Userprofile.find(params[:id])
 
     render("userprofiles/show.html.erb")
