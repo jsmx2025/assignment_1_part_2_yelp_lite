@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Ownerprofile resource:
+  # CREATE
+  get "/ownerprofiles/new", :controller => "ownerprofiles", :action => "new"
+  post "/create_ownerprofile", :controller => "ownerprofiles", :action => "create"
+
+  # READ
+  get "/ownerprofiles", :controller => "ownerprofiles", :action => "index"
+  get "/ownerprofiles/:id", :controller => "ownerprofiles", :action => "show"
+
+  # UPDATE
+  get "/ownerprofiles/:id/edit", :controller => "ownerprofiles", :action => "edit"
+  post "/update_ownerprofile/:id", :controller => "ownerprofiles", :action => "update"
+
+  # DELETE
+  get "/delete_ownerprofile/:id", :controller => "ownerprofiles", :action => "destroy"
+  #------------------------------
+
   devise_for :owners
   # Routes for the Owner resource:
   # READ
